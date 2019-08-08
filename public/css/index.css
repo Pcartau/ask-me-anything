@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+body {
+    font-family: 'Varela Round';
+    font-size: 22px;
+    font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1900 - 300)));
+    margin: 0;
+    height: 100%;
+}
+.hidden {
+    display: none;
+}
+h1 {
+    color: white;
+    text-align: center;
+    font-size: calc(80px + (22 - 14) * ((100vw - 300px) / (1900 - 300)));
+}
+h2 {
+    color: white;
+    text-align: center;
+    font-size: calc(35px + (22 - 14) * ((100vw - 300px) / (1900 - 300)));
+}
+h3 {
+    color: white;
+    text-align: center;
+    font-size: calc(20px + (22 - 14) * ((100vw - 300px) / (1900 - 300)));
+}
+input {
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: calc(8px + (20 - 14) * ((100vw - 300px) / (1900 - 300)));
+}
+.inputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.divButton {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: calc(35px + (22 - 14) * ((100vw - 300px) / (1900 - 300)));
+}
+.divButton p {
+    user-select: none;
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.divButton p:hover {
+    cursor: pointer;
+    color: #5ac6fd;
+    background-color: white;
+    border: solid 1px white;
+}
