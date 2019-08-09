@@ -4,22 +4,8 @@ let newAnswer = document.getElementById('newAnswer');
 let newAnswerButton = document.getElementById('confirmAnswer');
 let answerText = document.getElementById('answer');
 
-
-async function checkValue (question) {    
-    const rawResponse = await fetch('/sendQuestion', {
-        method: 'POST',
-        headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({question: question})
-    });
-    const response = await rawResponse.json();
-    return (response);
-};
-
-async function createQuestion (question, answer) {    
-    const rawResponse = await fetch('/createQuestion', {
+async function sendQA(question, answer, route) {
+    const rawResponse = await fetch(route, {
         method: 'POST',
         headers: {
         'Accept': 'application/json',
@@ -35,7 +21,7 @@ async function createQuestion (question, answer) {
 };
 
 askButton.addEventListener("click", async () => {
-    let answer = await checkValue(question.value);
+    let answer = await sendQA(question.value, undefined, '/sendQuestion');
     if (answer) {
         answerText.innerText = answer;
         newAnswer.style.display = "none";
@@ -48,7 +34,7 @@ askButton.addEventListener("click", async () => {
 });
 
 newAnswerButton.addEventListener("click", async () => {
-    await createQuestion(question.value, newAnswer.value);
+    await sendQA(question.value, newAnswer.value, '/createQuestion');
     newAnswer.style.display = "none";
     newAnswerButton.style.display = "none";
     answerText.innerText = "Answer added with success !"
