@@ -21,7 +21,7 @@ function sendQA(question, answer, route) {
     .then(response => response.json());
 };
 
-askButton.addEventListener("click", () => {
+DOM.askButton.addEventListener("click", () => {
     sendQA(question.value, undefined, '/sendQuestion')
     .then(answer => {
         DOM.answerText.innerText = answer ? answer : "No answer found ! You can provide an answer to the question";
