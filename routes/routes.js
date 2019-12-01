@@ -27,9 +27,7 @@ async function findQuestion(question) {
 module.exports = function(app) {
 
     app.get('/', (req, res) => {
-      res.send('Hello ' + eval(req.query.q));
-      console.log(req.query.q);
-      // res.sendFile(`${process.env.PWD}/views/index.html`);
+      res.sendFile(`${process.env.PWD}/views/index.html`);
     });
 
     app.post('/sendQuestion', async (req, res) => {
